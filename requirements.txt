@@ -1,0 +1,8 @@
+Flask==1.0.2
+Flask-Jsonpify==1.5.0
+Flask-RESTful==0.3.6
+Flask-SQLAlchemy==2.3.2
+Jinja2==2.10
+jsonify==0.5
+requests==2.19.1
+pymemcache==2.0.0

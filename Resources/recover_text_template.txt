@@ -1,0 +1,6 @@
+You are receiving this message because you've requested a new password for FIWARE Lab. If you haven't done so, please, ignore this mail.
+
+If you need a new password for FIWARE Lab, please follow the following link: {{change_password_link}}
+
+Best regards,
+FIWARE Team
