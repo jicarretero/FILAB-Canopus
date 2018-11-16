@@ -70,7 +70,7 @@ class ConfirmPasswordChange(Resource):
             Mailer.get_mailer().send_new_password(mail, password)
 
             Store.get_store().delete(code)
-            return password, http_result
+            return "Password changed. Please, check your email", http_result
         else:
             return "Not found Code", 404
 
