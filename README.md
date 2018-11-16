@@ -50,7 +50,7 @@ be installed in their own virtualenv.
     $ source venv/bin/activate
     $ pip install -r requirements.txt
 
-Once done this, we should edit ``config.ini`` file to configure things.
+Once done this, we should edit ``config.ini`` file to configure things:
     [keystone]
     # User who can do a password change. This is usually an admin user. And its password
     user=admin
@@ -94,4 +94,16 @@ Once done this, we should edit ``config.ini`` file to configure things.
     use_memcached=True
     memcached_host=localhost
     memcached_port=11211
+
+Now, every time we want to start (locally) the server, we can:
+
+    $ source venv/bin/activate
+    $ python main.py
+
+There's one file we could consider editing when we try to make this run under Apache. The
+file is ``filab-password.wsgi``. This line should be changed in order to make things work
+whith the virtual environment we should have created.
+
+    # Change this line in order to meet your virtualenv.
+    activate_this = base_path + '/venv/bin/activate_this.py'
 

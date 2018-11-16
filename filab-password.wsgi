@@ -8,6 +8,7 @@ from functions import *
 
 # Change this line in order to meet your virtualenv.
 activate_this = base_path + '/venv/bin/activate_this.py'
+
 execfile(activate_this, dict(__file__=activate_this))
 
 from OpenstackOps import OpenstackQueries
