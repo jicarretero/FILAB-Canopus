@@ -42,3 +42,56 @@ When you click the link, you can have
 ### Installation
 In order to install the service, it should be cloned from Github and the requirements should
 be installed in their own virtualenv.
+
+    $ https://github.com/jicarretero/FILAB-Canopus
+    ...
+    $ cd FILAB-Canopus
+    $ virtualenv venv
+    $ source venv/bin/activate
+    $ pip install -r requirements.txt
+
+Once done this, we should edit ``config.ini`` file to configure things.
+    [keystone]
+    # User who can do a password change. This is usually an admin user. And its password
+    user=admin
+    password=whateverpassword
+    
+    # Keystone auth URL. 
+    url=http://cloud.lab.fiware.org:4730
+    
+    [server]
+    # Where the service is installed. The service base URL
+    base_url=https://cloud.lab.fiware.org/filab-passwords
+    
+    [email]
+    # This is the email SMTP server used to send mails to the users
+    host=host.youremailserver.com
+
+    # The from of the email.
+    from=whoever@host.youremailserver.com
+    
+    # The from shown in the email clients.
+    from_name=whoever <whoever@host.youremailserver.com>
+    
+    # These are the files used to email the user that a password change request has been issued
+    # Under "Resources" there are the examples
+    recover_html_template=Resources/recover_text_template.html
+    recover_text_template=Resources/recover_text_template.txt
+    
+    # The subject of the email sent when a recover password has been issued.
+    recover_subject=The Subject to be sent in your recover file
+    
+    # These are the files used to email the user the password change is effective
+    # Under "Resources" there are the examples
+    new_password_html_template=Resources/new_password_text_template.html
+    new_password_text_template=Resources/new_password_text_template.txt
+    
+    # The subject of the email sent when a recover password has been issued.
+    new_password_subject=The Subject for the new password
+    
+    [memcached]
+    # This is quite useful. Should be used. Just simple configuration parameters.
+    use_memcached=True
+    memcached_host=localhost
+    memcached_port=11211
+

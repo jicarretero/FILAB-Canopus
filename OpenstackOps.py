@@ -48,9 +48,9 @@ class OpenstackQueries:
                         "methods": ["password"],
                         "password": {
                             "user": {
-                                "name": "admin",
+                                "name": self.config.user,
                                 "domain": {"id": "default"},
-                                "password": "zMCGfpTLTAMF2L2c"
+                                "password": self.config.password
                             }
                         }
                     }
